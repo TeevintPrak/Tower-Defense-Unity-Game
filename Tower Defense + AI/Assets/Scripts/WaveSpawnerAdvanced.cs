@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawnerAdvanced : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class WaveSpawnerAdvanced : MonoBehaviour
         public Transform enemy;
         public int count;
         public float rate;
+        public Transform spawnPoint;
     }
 
     public Wave[] waves;
@@ -24,6 +26,9 @@ public class WaveSpawnerAdvanced : MonoBehaviour
 
     private float searchCountdown = 1f;
     private SpawnState state = SpawnState.COUNTING;
+
+    public Text waveCountdownText;
+
     void Start()
     {
         waveCountDown = timeBetweenWaves;
@@ -55,6 +60,8 @@ public class WaveSpawnerAdvanced : MonoBehaviour
         {
             waveCountDown -= Time.deltaTime;
         }
+
+        waveCountdownText.text = Mathf.Round(waveCountDown).ToString();
     }
 
     void WaveCompleted()
@@ -96,7 +103,7 @@ public class WaveSpawnerAdvanced : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
 		{
-            SpawnEnemy(_wave.enemy);
+            SpawnEnemy(_wave.enemy, _wave.spawnPoint);
             yield return new WaitForSeconds(1f / _wave.rate);
 		}
 
@@ -105,9 +112,9 @@ public class WaveSpawnerAdvanced : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy (Transform _enemy)
+    void SpawnEnemy (Transform _enemy, Transform spawnPoint)
 	{
         Debug.Log("Spawning Enemy: " + _enemy.name);
-        Instantiate(_enemy, transform.position, transform.rotation);
+        Instantiate(_enemy, spawnPoint.position, spawnPoint.rotation);
 	}
 }
