@@ -6,7 +6,7 @@
 
 **Project Goals:** I am also hoing this project can scale to the point twitch chat can vote on polls attached to the enemy and let the AI try to stop the polls enemy from going through. I want to see and showcase the results of the AI strategies in-game or on the slides.
 
-**Link to Slides/Video**
+Link to slides/video: 
 =============================================
 
 **About Me:** <b> </b>
