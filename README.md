@@ -8,6 +8,8 @@
 
 **Project Goals:** My first priority is to make a barely playable mvp tower defense game. If I have time, I will try my best to implement Unity's Machine Learning and train the agents. If I get those done, I want to showcase the results of the AI strategies in-game or on the slides. I am also hoping this project can scale to the point twitch chat can vote on polls attached to the enemy and let the AI try to stop the polls enemy from going through. Those that goes through, can have the streamer act on those polls. 
 
+Status: No machine learning AI or AI whatsoever. 
+
 Link to demo: https://vorezii.itch.io/tower-defense
 
 Link to slides https://docs.google.com/presentation/d/1ODXpXlMY52gqrzKe27qD_36o-HX3wEu37xUvLzEj6aw/edit?usp=sharing
