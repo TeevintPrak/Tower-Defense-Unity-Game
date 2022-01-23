@@ -2,9 +2,9 @@
 
  This is public repository for my Unity game project submission for the hack4pan hackathon.
 
-**Project Description:** This is a basic Tower Defense game made in Unity that is planned to be implemented with Unity's Machine Learning AI to come up with the best strategies to win a certain level.
+**Project Description:** This is a basic Tower Defense game made in Unity that I plan to implement with Unity's Machine Learning AI to come up with the best strategies to win a certain level.
 
-**Project Goals:** I am also hoing this project can scale to the point twitch chat can vote on polls attached to the enemy and let the AI try to stop the polls enemy from going through. I want to see and showcase the results of the AI strategies in-game or on the slides.
+**Project Goals:** My first priority is to make a barely playable mvp tower defense game. If I have time, I will try my best to implement Unity's Machine Learning and train the agents. If I get those done, I want to showcase the results of the AI strategies in-game or on the slides. I am also hoping this project can scale to the point twitch chat can vote on polls attached to the enemy and let the AI try to stop the polls enemy from going through. Those that goes through, can have the streamer act on those polls. 
 
 Link to slides/video: 
 
