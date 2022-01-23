@@ -10,7 +10,9 @@
 
 Link to demo: https://vorezii.itch.io/tower-defense
 
-Link to slides/video: https://docs.google.com/presentation/d/1ODXpXlMY52gqrzKe27qD_36o-HX3wEu37xUvLzEj6aw/edit?usp=sharing
+Link to slides https://docs.google.com/presentation/d/1ODXpXlMY52gqrzKe27qD_36o-HX3wEu37xUvLzEj6aw/edit?usp=sharing
+
+Line to demo video: https://www.youtube.com/watch?v=OqkR_lz_GHc
 
 ![Gameplay image](GamePlay3.PNG)
 
