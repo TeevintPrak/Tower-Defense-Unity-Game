@@ -1,6 +1,8 @@
 # Tower-Defense-Unity-Game
 
  This is public repository for my Unity game project submission for the hack4pan hackathon.
+ 
+ Courtesy to: Brackeys, Unity, and Unity's Machine Learning. 
 
 **Project Description:** This is a basic Tower Defense game made in Unity that I plan to implement with Unity's Machine Learning AI to come up with the best strategies to win a certain level.
 
