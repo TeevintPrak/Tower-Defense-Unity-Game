@@ -12,6 +12,8 @@ Link to demo: https://vorezii.itch.io/tower-defense
 
 Link to slides/video: https://docs.google.com/presentation/d/1ODXpXlMY52gqrzKe27qD_36o-HX3wEu37xUvLzEj6aw/edit?usp=sharing
 
+![Gameplay image](https://github.com/TeevintPrak/Tower-Defense-Unity-Game/Gameplay3.png?raw=true)
+
 =============================================
 
 **About Me:** <b> </b>
