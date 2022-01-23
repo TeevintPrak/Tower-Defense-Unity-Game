@@ -10,6 +10,16 @@ public class Buttons : MonoBehaviour
 		SceneManager.LoadScene(1);
 	}
 
+	public void AIPlays()
+	{
+
+	}
+
+	public void MainMenu()
+	{
+		SceneManager.LoadScene(0);
+	}
+
 	public void Exit()
 	{
 		Application.Quit();

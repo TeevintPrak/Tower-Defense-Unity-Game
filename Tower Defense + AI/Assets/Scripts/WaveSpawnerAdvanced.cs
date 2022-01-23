@@ -83,7 +83,7 @@ public class WaveSpawnerAdvanced : MonoBehaviour
             waveIndex = 0;
             waveNumber.text = (waveIndex + 1).ToString();
             Debug.Log("All waves are completed!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(0);
         }
 		else
 		{
