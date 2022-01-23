@@ -7,7 +7,7 @@ public class Missile : MonoBehaviour
     public GameObject impactEffect;
     public Material impactMaterial;
 
-    public int damage;
+    public int damage = 10;
 
     private Transform target;
     private Color impactColor;

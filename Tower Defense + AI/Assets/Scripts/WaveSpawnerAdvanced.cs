@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawnerAdvanced : MonoBehaviour
 {
@@ -82,6 +83,7 @@ public class WaveSpawnerAdvanced : MonoBehaviour
             waveIndex = 0;
             waveNumber.text = (waveIndex + 1).ToString();
             Debug.Log("All waves are completed!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 		else
 		{
