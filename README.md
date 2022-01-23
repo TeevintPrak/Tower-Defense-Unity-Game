@@ -8,7 +8,7 @@
 
 Link to demo: https://vorezii.itch.io/tower-defense
 
-Link to slides/video: 
+Link to slides/video: https://docs.google.com/presentation/d/1ODXpXlMY52gqrzKe27qD_36o-HX3wEu37xUvLzEj6aw/edit?usp=sharing
 
 =============================================
 
