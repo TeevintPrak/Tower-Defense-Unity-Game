@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3194459456266484307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3194459456266484317}
+  - component: {fileID: 3194459456266484306}
+  - component: {fileID: 3194459456266484316}
+  - component: {fileID: 3194459456266484319}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3194459456266484317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194459456266484307}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40, y: 1, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3194459456266484306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194459456266484307}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f7011e5af7e48479f880cc1aa852d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs: {fileID: 0}
+  name: 
+  timeBetweenWaves: 5
+  countdown: 2
+--- !u!114 &3194459456266484316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194459456266484307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1981ecaa57b7e0442be2b04071a6d80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: First Wave
+    enemy: {fileID: 1583006528657095422, guid: d5a554157ac0efb42843dc0ec062bbb8, type: 3}
+    count: 10
+    rate: 10
+    spawnPoint: {fileID: 3194459456266484317}
+  - name: Second Wave
+    enemy: {fileID: 1583006528657095422, guid: d5a554157ac0efb42843dc0ec062bbb8, type: 3}
+    count: 3
+    rate: 1.5
+    spawnPoint: {fileID: 3194459456266484317}
+  - name: Third Wave
+    enemy: {fileID: 1583006528657095422, guid: d5a554157ac0efb42843dc0ec062bbb8, type: 3}
+    count: 5
+    rate: 2
+    spawnPoint: {fileID: 3194459456266484317}
+  timeBetweenWaves: 3
+  waveCountDown: 5.5
+  waveCountdownText: {fileID: 0}
+  waveNumber: {fileID: 0}
+--- !u!114 &3194459456266484319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194459456266484307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9ec8a8a50014c488b196501c6f427e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardTurretPrefab: {fileID: 7990524245972453768, guid: 405b349b4ab02c24dacd6c076938f2c4, type: 3}
+  fastTurretPrefab: {fileID: 7298771331745308186, guid: dff2df4daf1de98449b59a3bee904aa4, type: 3}
+  missileLauncherPrefab: {fileID: 4013693619339634725, guid: ea24589badf0b2249bc13b28c92ba280, type: 3}
+  currency: 0
+  priceStandard: 0
+  priceFast: 0
+  priceMissile: 0
+  moneyText: {fileID: 0}

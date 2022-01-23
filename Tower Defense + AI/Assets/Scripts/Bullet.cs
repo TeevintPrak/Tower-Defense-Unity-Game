@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     public GameObject impactEffect;
     public Material impactMaterial;
 
+    public int damage;
+
     private Transform target;
     private Color impactColor;
 
@@ -14,12 +16,14 @@ public class Bullet : MonoBehaviour
 
     public float speed = 70f;
 
-    public void Seek (Transform _target, Color _color, GameObject _turret)
+    public void Seek (Transform _target, Color _color, GameObject _turret, int _damage)
 	{
         target = _target;
         impactColor = _color;
         turret = _turret;
-	}
+        damage = _damage;
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -34,8 +38,6 @@ public class Bullet : MonoBehaviour
 
         if(dir.magnitude <= distanceThisFrame)
 		{
-            Turret script = turret.GetComponent<Turret>();
-            script.removeEnemy(target.gameObject);
             HitTarget();
             return;
         }
@@ -49,7 +51,17 @@ public class Bullet : MonoBehaviour
         impactMaterial.color = impactColor;
         GameObject effectInst = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectInst, 2f);
-        Destroy(target.gameObject);
+
+        Turret script = turret.GetComponent<Turret>();
+        GameObject enemy = target.gameObject;
+
+        bool isDead = enemy.GetComponent<Enemy_Health>().GetHit(damage);
+        if (isDead)
+        {
+            script.removeEnemy(enemy);
+            Destroy(enemy);
+        }
+
         Destroy(gameObject);
 	}
 }

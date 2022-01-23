@@ -4,8 +4,8 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed = 10f;
 
+
     private Transform target;
-    private Transform enemy;
     private int wavepointIndex = 0;
 
     void Start() {
@@ -31,6 +31,11 @@ public class EnemyMovement : MonoBehaviour
 
         wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
+    }
+
+    public void SetSpeed(float _speed)
+    {
+        speed = _speed;
     }
 
 }

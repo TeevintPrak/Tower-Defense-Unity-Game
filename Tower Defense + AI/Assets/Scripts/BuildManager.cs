@@ -1,20 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
 	public static BuildManager instance;
 
 	public GameObject standardTurretPrefab;
-	public GameObject panelledTurretPrefab;
+	public GameObject fastTurretPrefab;
 	public GameObject missileLauncherPrefab;
 	//public GameObject laserBeamPrefab;
 
 	private GameObject turretToBuild;
 
+	public int currency;
+	public int priceStandard;
+	public int priceFast;
+	public int priceMissile;
+
+	private int turretID;
+
+	public Text moneyText;
+
 	private void Awake()
 	{
+		turretID = 0;
+		moneyText.text = currency.ToString();
+		priceStandard = 150;
+		priceFast = 200;
+		priceMissile = 200;
 		if (instance != null)
 		{
 			Debug.Log("More than one build manager in scene!");
@@ -25,25 +40,90 @@ public class BuildManager : MonoBehaviour
 
 	private void Start()
 	{
+		currency = 300;
 		turretToBuild = standardTurretPrefab;
 		//turretToBuild.Add(laserBeamPrefab);
 	}
 
+	public void addMoney(int n)
+	{
+		currency += n;
+		Debug.Log("Currency = " + currency);
+	}
+
+	private void FixedUpdate()
+	{
+		moneyText.text = currency.ToString();
+	}
+
 	public GameObject GetTurretToBuild (int n)
 	{
-		if(n == 0)
+		if (n == 0) 
 		{
+			turretID = n;
 			return standardTurretPrefab;
-		}
+		} 
 		else if (n == 1)
 		{
-			return panelledTurretPrefab;
+			turretID = n;
+			return fastTurretPrefab;
 		}
-		else if(n == 2)
+		else if (n == 2)
 		{
+			turretID = n;
 			return missileLauncherPrefab;
 		}
-
+		turretID = 0;
 		return standardTurretPrefab;
 	}
+
+	public bool purchaseTurret()
+	{
+		if (turretID == 0)
+		{
+			if (currency >= priceStandard)
+			{
+				currency -= priceStandard;
+				moneyText.text = currency.ToString();
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else if (turretID == 1)
+		{
+			if (currency >= priceFast)
+			{
+				currency -= priceFast;
+				moneyText.text = currency.ToString();
+				return fastTurretPrefab;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else if (turretID == 2)
+		{
+			if (currency >= priceMissile)
+			{
+				currency -= priceMissile;
+				moneyText.text = currency.ToString();
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		return false;
+	}
+
+	/*
+	 * 
+		
+	*/
 }

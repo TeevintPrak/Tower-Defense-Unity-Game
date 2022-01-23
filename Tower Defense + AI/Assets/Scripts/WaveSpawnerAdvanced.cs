@@ -16,6 +16,8 @@ public class WaveSpawnerAdvanced : MonoBehaviour
         public int count;
         public float rate;
         public Transform spawnPoint;
+        public float healthMultiplier;
+        public float speed;
     }
 
     public Wave[] waves;
@@ -28,10 +30,12 @@ public class WaveSpawnerAdvanced : MonoBehaviour
     private SpawnState state = SpawnState.COUNTING;
 
     public Text waveCountdownText;
+    public Text waveNumber;
 
     void Start()
     {
         waveCountDown = timeBetweenWaves;
+        waveNumber.text = 1.ToString();
 
     }
     // Update is called once per frame
@@ -74,11 +78,13 @@ public class WaveSpawnerAdvanced : MonoBehaviour
         if (waveIndex + 1 > waves.Length - 1)
         {
             waveIndex = 0;
+            waveNumber.text = (waveIndex + 1).ToString();
             Debug.Log("All waves are completed!");
         }
 		else
 		{
             waveIndex++;
+            waveNumber.text = (waveIndex + 1).ToString();
         }
 	}
 
@@ -103,7 +109,7 @@ public class WaveSpawnerAdvanced : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
 		{
-            SpawnEnemy(_wave.enemy, _wave.spawnPoint);
+            SpawnEnemy(_wave.enemy, _wave.spawnPoint, _wave.healthMultiplier, _wave.speed);
             yield return new WaitForSeconds(1f / _wave.rate);
 		}
 
@@ -112,9 +118,14 @@ public class WaveSpawnerAdvanced : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy (Transform _enemy, Transform spawnPoint)
+    void SpawnEnemy (Transform _enemy, Transform spawnPoint, float _healthMultiplier, float _speed)
 	{
         Debug.Log("Spawning Enemy: " + _enemy.name);
-        Instantiate(_enemy, spawnPoint.position, spawnPoint.rotation);
-	}
+        GameObject enemy = (GameObject)Instantiate(_enemy.gameObject, spawnPoint.position, spawnPoint.rotation);
+        Enemy_Health health = enemy.GetComponent<Enemy_Health>();
+        EnemyMovement movement = enemy.GetComponent<EnemyMovement>();
+        health.SetHealth(_healthMultiplier);
+        movement.SetSpeed(_speed);
+
+    }
 }

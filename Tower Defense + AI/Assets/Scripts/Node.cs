@@ -42,6 +42,12 @@ public class Node : MonoBehaviour
 			return;
 		}
 
+		if(!BuildManager.instance.purchaseTurret())
+		{
+			Debug.Log("Not enough money!");
+			return;
+		}
+
 		turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
 		/*
 		else if (Input.GetKeyUp("3"))

@@ -12,6 +12,7 @@ public class Turret : MonoBehaviour
 	[Header("Attributes")]
 	public float range = 10f;
 	public float fireRate = 1f;
+	public int damage = 10;
 	private float fireCountDown = 0f;
 	public AudioSource shootEffect; 
 
@@ -108,6 +109,7 @@ public class Turret : MonoBehaviour
 
 		if(bulletPrefab.name == "Missile")
 		{
+			shootEffect.Play();
 			Debug.Log("Firing Missiles");
 			Missile missle = bulletInst.GetComponent<Missile>();
 			if (missle != null)
@@ -117,11 +119,12 @@ public class Turret : MonoBehaviour
 		}
 		else
 		{
+			shootEffect.Play();
 			Bullet bullet = bulletInst.GetComponent<Bullet>();
 			Debug.Log("Firing Bullets");
 			if (bullet != null)
 			{
-				bullet.Seek(target, color, gameObject);
+				bullet.Seek(target, color, gameObject, damage);
 			}
 		}
 

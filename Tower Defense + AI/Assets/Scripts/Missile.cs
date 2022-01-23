@@ -7,6 +7,8 @@ public class Missile : MonoBehaviour
     public GameObject impactEffect;
     public Material impactMaterial;
 
+    public int damage;
+
     private Transform target;
     private Color impactColor;
 
@@ -15,6 +17,7 @@ public class Missile : MonoBehaviour
     private ExplosionRange expRange;
 
     public float speed = 70f;
+
 
     public void Seek (Transform _target, Color _color, GameObject _turret)
 	{
@@ -55,9 +58,12 @@ public class Missile : MonoBehaviour
 
         foreach (GameObject enemy in expRange.enemies)
 		{
-            Debug.Log("enemies in range: " + expRange.enemies.Count);
-            script.removeEnemy(enemy);
-            Destroy(enemy);
+            bool isDead = enemy.GetComponent<Enemy_Health>().GetHit(damage);
+            if (isDead)
+            {
+                script.removeEnemy(enemy);
+                Destroy(enemy);
+            }
         }
 
         Destroy(gameObject);
