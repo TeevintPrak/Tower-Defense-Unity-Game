@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276037704214518673}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PartToBeMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352833608685179301}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 6143837635537254923}
   - component: {fileID: 2000907762004639788}
   - component: {fileID: 434249419722971575}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4545429310553274141}
   - component: {fileID: 1310143432097988722}
   - component: {fileID: 635924995123452337}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Missile Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ MonoBehaviour:
   shootEffect: {fileID: 0}
   partToRotate: {fileID: 1276037704214518673}
   turnSpeed: 10
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8773869774101390813, guid: 4eed16f3154e4bb44af74b012053b68e, type: 3}
   firePoint: {fileID: 1352833608685179301}
 --- !u!1 &6068041035011720052
 GameObject:
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 1681382705747686572}
   - component: {fileID: 2507534672144716820}
   - component: {fileID: 760390978441672073}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 7327077225148771501}
   - component: {fileID: 7393765935048708891}
   - component: {fileID: 4382614314307356671}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -34,7 +34,7 @@ public class Turret : MonoBehaviour
 	{
 		if(other.gameObject.tag == "Enemy")
 		{
-			Debug.Log("Enemy Detected: " + other.gameObject.transform.position);
+			//Debug.Log("Enemy Detected: " + other.gameObject.transform.position);
 			enemies.Add(other.gameObject);
 		}
 	}
@@ -43,7 +43,7 @@ public class Turret : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Enemy")
 		{
-			Debug.Log("Enemy Exited: " + other.gameObject.transform.position);
+			//Debug.Log("Enemy Exited: " + other.gameObject.transform.position);
 			enemies.Remove(other.gameObject);
 		}
 	}
@@ -105,12 +105,26 @@ public class Turret : MonoBehaviour
 	public void Shoot()
 	{
 		GameObject bulletInst = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-		Bullet bullet = bulletInst.GetComponent<Bullet>();
-		
-		if(bullet != null)
+
+		if(bulletPrefab.name == "Missile")
 		{
-			bullet.Seek(target, color, gameObject);
+			Debug.Log("Firing Missiles");
+			Missile missle = bulletInst.GetComponent<Missile>();
+			if (missle != null)
+			{
+				missle.Seek(target, color, gameObject);
+			}
 		}
+		else
+		{
+			Bullet bullet = bulletInst.GetComponent<Bullet>();
+			Debug.Log("Firing Bullets");
+			if (bullet != null)
+			{
+				bullet.Seek(target, color, gameObject);
+			}
+		}
+
 	}
 
 	private void OnDrawGizmosSelected()

@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 4403245550342231372}
   - component: {fileID: 259671564850966396}
   - component: {fileID: 6155116433131592588}
+  - component: {fileID: 5162216859127296114}
+  - component: {fileID: 3339836936400341923}
+  - component: {fileID: 8424919275018829384}
+  - component: {fileID: -8222050081806989065}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -89,11 +93,68 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8773869774101390813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbe50f5e5e10ea341af3f6db28db52e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 7870671738048310579, guid: 00e18010380ca5a41b02f3328019595d, type: 3}
   impactMaterial: {fileID: 2100000, guid: cb12eb583ae3a39488a507fdceaff80e, type: 2}
-  speed: 10
+  speed: 100
+--- !u!135 &5162216859127296114
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773869774101390813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.03654518
+  m_Center: {x: -0.0039200173, y: -0.000000002095287, z: -0.0000000059374106}
+--- !u!114 &3339836936400341923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773869774101390813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f303ad98879d4c468e9669e7f9be17d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: []
+--- !u!114 &8424919275018829384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773869774101390813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d79923cdd940cf459290365c57b5f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactEffect: {fileID: 7870671738048310579, guid: 00e18010380ca5a41b02f3328019595d, type: 3}
+  impactMaterial: {fileID: 2100000, guid: cb12eb583ae3a39488a507fdceaff80e, type: 2}
+  speed: 70
+--- !u!54 &-8222050081806989065
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773869774101390813}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1

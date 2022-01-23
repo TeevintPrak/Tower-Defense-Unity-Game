@@ -7,6 +7,9 @@ public class BuildManager : MonoBehaviour
 	public static BuildManager instance;
 
 	public GameObject standardTurretPrefab;
+	public GameObject panelledTurretPrefab;
+	public GameObject missileLauncherPrefab;
+	//public GameObject laserBeamPrefab;
 
 	private GameObject turretToBuild;
 
@@ -23,10 +26,24 @@ public class BuildManager : MonoBehaviour
 	private void Start()
 	{
 		turretToBuild = standardTurretPrefab;
+		//turretToBuild.Add(laserBeamPrefab);
 	}
 
-	public GameObject GetTurretToBuild ()
+	public GameObject GetTurretToBuild (int n)
 	{
-		return turretToBuild;
+		if(n == 0)
+		{
+			return standardTurretPrefab;
+		}
+		else if (n == 1)
+		{
+			return panelledTurretPrefab;
+		}
+		else if(n == 2)
+		{
+			return missileLauncherPrefab;
+		}
+
+		return standardTurretPrefab;
 	}
 }
