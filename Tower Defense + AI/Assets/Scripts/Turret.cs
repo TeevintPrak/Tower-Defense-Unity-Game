@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
 	public float range = 10f;
 	public float fireRate = 1f;
 	private float fireCountDown = 0f;
+	public AudioSource shootEffect; 
 
 
 	[Header("UnitySetupFields")]
@@ -60,6 +61,8 @@ public class Turret : MonoBehaviour
 			return;
 		foreach (GameObject enemy in enemies)
 		{
+			if (enemy == null)
+				continue;
 			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 			if (distanceToEnemy < shortestDistance)
 			{

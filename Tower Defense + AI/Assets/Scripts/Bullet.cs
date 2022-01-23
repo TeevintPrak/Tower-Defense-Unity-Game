@@ -34,6 +34,8 @@ public class Bullet : MonoBehaviour
 
         if(dir.magnitude <= distanceThisFrame)
 		{
+            Turret script = turret.GetComponent<Turret>();
+            script.removeEnemy(target.gameObject);
             HitTarget();
             return;
         }
@@ -47,8 +49,6 @@ public class Bullet : MonoBehaviour
         impactMaterial.color = impactColor;
         GameObject effectInst = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectInst, 2f);
-        Turret script = turret.GetComponent<Turret>();
-        script.removeEnemy(target.gameObject);
         Destroy(target.gameObject);
         Destroy(gameObject);
 	}
