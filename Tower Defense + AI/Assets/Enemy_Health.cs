@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Health : MonoBehaviour
 {
-    public int value = 10;
+    public int value;
     public float baseHealth = 10;
     private float Health;
 
@@ -32,4 +32,9 @@ public class Enemy_Health : MonoBehaviour
 	{
         Health = baseHealth * multiplier;
 	}
+
+    public void SetValue(int _value)
+    {
+        value = _value;
+    }
 }

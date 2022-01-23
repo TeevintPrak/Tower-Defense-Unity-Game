@@ -20,11 +20,15 @@ public class BuildManager : MonoBehaviour
 	public int priceMissile;
 
 	private int turretID;
+	private int invasions;
 
 	public Text moneyText;
+	public Text invasionText;
 
 	private void Awake()
 	{
+		invasions = 0;
+		currency = 300;
 		turretID = 0;
 		moneyText.text = currency.ToString();
 		priceStandard = 150;
@@ -40,7 +44,6 @@ public class BuildManager : MonoBehaviour
 
 	private void Start()
 	{
-		currency = 300;
 		turretToBuild = standardTurretPrefab;
 		//turretToBuild.Add(laserBeamPrefab);
 	}
@@ -50,10 +53,17 @@ public class BuildManager : MonoBehaviour
 		currency += n;
 		Debug.Log("Currency = " + currency);
 	}
+	
+	public void addAnInvasion()
+	{
+		invasions += 1;
+		invasionText.text = invasions.ToString();
+	}
 
 	private void FixedUpdate()
 	{
 		moneyText.text = currency.ToString();
+		invasionText.text = invasions.ToString();
 	}
 
 	public GameObject GetTurretToBuild (int n)

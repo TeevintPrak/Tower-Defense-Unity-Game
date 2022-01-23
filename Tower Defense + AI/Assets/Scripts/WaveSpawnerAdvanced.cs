@@ -18,6 +18,8 @@ public class WaveSpawnerAdvanced : MonoBehaviour
         public Transform spawnPoint;
         public float healthMultiplier;
         public float speed;
+        public Material mat;
+        public int value;
     }
 
     public Wave[] waves;
@@ -109,23 +111,24 @@ public class WaveSpawnerAdvanced : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
 		{
-            SpawnEnemy(_wave.enemy, _wave.spawnPoint, _wave.healthMultiplier, _wave.speed);
+            SpawnEnemy(_wave.enemy, _wave.spawnPoint, _wave.healthMultiplier, _wave.speed, _wave.mat, _wave.value);
             yield return new WaitForSeconds(1f / _wave.rate);
 		}
-
         state = SpawnState.WAITING;
 
         yield break;
     }
 
-    void SpawnEnemy (Transform _enemy, Transform spawnPoint, float _healthMultiplier, float _speed)
+    void SpawnEnemy (Transform _enemy, Transform spawnPoint, float _healthMultiplier, float _speed, Material _mat, int _value)
 	{
         Debug.Log("Spawning Enemy: " + _enemy.name);
         GameObject enemy = (GameObject)Instantiate(_enemy.gameObject, spawnPoint.position, spawnPoint.rotation);
         Enemy_Health health = enemy.GetComponent<Enemy_Health>();
         EnemyMovement movement = enemy.GetComponent<EnemyMovement>();
+        enemy.GetComponent<Renderer>().material.color = _mat.color;  
         health.SetHealth(_healthMultiplier);
         movement.SetSpeed(_speed);
+        health.SetValue(_value);
 
     }
 }

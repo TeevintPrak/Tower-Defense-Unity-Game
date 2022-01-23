@@ -24,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
 
     void GetNextWaypoint() {
         if (wavepointIndex >= Waypoints.points.Length - 1) {
+            BuildManager.instance.addAnInvasion();
             Destroy(gameObject);
             return;
         }
